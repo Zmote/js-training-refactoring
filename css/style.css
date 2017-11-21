@@ -5,5 +5,6 @@
 }
 #outputArea{
     border:1px solid black;
-    height:90vh;
+    height:90vh !important;
+    max-height: none !important;
 }
