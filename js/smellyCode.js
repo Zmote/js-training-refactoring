@@ -1,5 +1,6 @@
 function generateHTML(customHtmlString){
-    console.log(customHtmlString);
+    //TODO: Write Parsing Code for Custom HTML Syntax
+
     writeParsedHtml(customHtmlString);
 }
 
