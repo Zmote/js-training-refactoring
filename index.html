@@ -11,21 +11,30 @@
 
 <div class="container-fluid">
     <div class="row ml-3 mt-2">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <label class="row" for="editor">Custom HTML:</label>
             <p class="row small-text w-100">You can use normal tags or Shorthand tags: h = html, bo = body, d = div, sc
                 = script, bu = button,
                 le = legend, ta = table, tby = tbody, thd = thead, tft = tfoot, s = span, sel = select, op = option, la
-                = label, in = input</p>
-            <div class="row" id="editor">div
-d
+                = label, in = input, Use: @ to define attributes, comma(,) to signify spacing</p>
+            <div class="row" id="editor">d@class=container-fluid
+    ta@class=table,table-striped
+        thd
+            th@text=Row,1
+            th@text=Row,2
+        tby
+            tr
+                td@text=10
+                td@text=10
+            tr
+                td@text=10
+                td@text=10
+    div
     d
-        bu
-            a
-            </div>
+                a@href=http://www.20min.ch@class=btn,btn-primary@id=whathwat@text=Click,me</div>
             <button id="parseHtmlButton" class="row btn btn-primary w-100">Parse To HTML</button>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-6">
             <label class="row" for="editor">Output HTML:</label>
             <div class="row w-100 pre-scrollable" id="outputArea">
             </div>

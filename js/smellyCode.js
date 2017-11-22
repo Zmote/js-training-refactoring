@@ -1,4 +1,3 @@
-
 function generateHTML(customHtmlString) {
     let lines = customHtmlString.split("\n");
     let structure = [];
@@ -6,72 +5,217 @@ function generateHTML(customHtmlString) {
         let rawRow = lines[i].split(" ");
         let nestLevel = Math.floor(rawRow.length / 4);
         let customElem = rawRow.join("").trim();
-        if(customElem === "h"){
+        let customElemWithAttr = customElem.split("@");
+        customElem = customElemWithAttr[0];
+        if (customElem === "h") {
             let elem = "html";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "d"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "d") {
             let elem = "div";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "s"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "s") {
             let elem = "span";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "sc"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "sc") {
             let elem = "script";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "l"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "l") {
             let elem = "link";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "s"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "s") {
             let elem = "span";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "bu"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "bu") {
             let elem = "button";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "in"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "in") {
             let elem = "input";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "bo"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "bo") {
             let elem = "body";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "la"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "la") {
             let elem = "label";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "ta"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "ta") {
             let elem = "table";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "tby"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "tby") {
             let elem = "tbody";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "thd"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "thd") {
             let elem = "thead";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "tft"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "tft") {
             let elem = "tfoot";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "leg"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "leg") {
             let elem = "legend";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "s"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "s") {
             let elem = "span";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "sel"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "sel") {
             let elem = "select";
-            structure.push({elem, nestLevel, children: []});
-        }else if(customElem === "op"){
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else if (customElem === "op") {
             let elem = "option";
-            structure.push({elem, nestLevel, children: []});
-        }else{
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
+        } else {
             let elem = customElem;
-            structure.push({elem, nestLevel, children: []});
+            let attributes = [];
+            for (let i = 1; i < customElemWithAttr.length; i++) {
+                let attrs = customElemWithAttr[i].split("=");
+                if (attrs.length === 2) {
+                    attributes.push({tag: attrs[0], value: attrs[1].split(",").join(" ")});
+                }
+            }
+            structure.push({elem, nestLevel, attributes: attributes});
         }
     }
     $("#outputArea").html(buildHierarchy(structure, 0, document.createElement("div")).children);
 }
 
 function buildHierarchy(structure, level, root) {
-    if(structure[0].elem){
-        root.appendChild(document.createElement(structure.shift().elem));
-    }else{
+    if (structure[0].elem) {
+        let elem = structure.shift();
+        let node = document.createElement(elem.elem);
+        for (let i = 0; i < elem.attributes.length; i++) {
+            if(elem.attributes[i].tag === "text"){
+                let textNode = document.createTextNode(elem.attributes[i].value);
+                node.appendChild(textNode);
+            }else{
+                node.setAttribute(elem.attributes[i].tag, elem.attributes[i].value);
+            }
+        }
+        root.appendChild(node);
+    } else {
         structure.shift();
     }
     if (structure.length && structure[0].nestLevel > level) {
